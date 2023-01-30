@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body
+        {
+        background-image: url("data:image/png;base64,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");
+        background-size: cover;
+        }
+        h3.big
+        {
+        line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-12 bg-light text-right">
+                <a href="/home" class="btn btn-info btn-lg">Home</a>
+                <a href="/predict" class="btn btn-primary disabled btn-lg">Predict</a>
+            </div>
+        </div> <br>
+         <h1><strong>Online Payments Fraud Detection</strong></h1><br>
+          <h4>
+          <form action="/pred", method="POST">
+               <div class="form-group row">
+                   <div class="col-md-3">
+                       <label for="step">Step</label>
+                       <input type="number" class="form-control" name="step" id="step"  placeholder="step: represents a unit of time where 1 step equals 1 hour" required="required"/>
+                   </div>
+               </div>
+                <div class="form-group row">
+                    <div class="col-md-3">
+                        <label for="type">Type</label>
+                        <input type="number" class="form-control" name="type" id="type"  placeholder="type of online transaction" required="required"/>
+                    </div>
+                </div>
+                 <div class="form-group row">
+                     <div class="col-md-3">
+                         <label for="amount">Amount</label>
+                         <input type="number" class="form-control" name="amount" min=5 max=15 step=0.000001 id="amount"  placeholder="the amount of the transaction" required="required"/>
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <div class="col-md-3">
+                         <label for="oldbalanceOrg">OldbalanceOrg</label>
+                         <input type="number" class="form-control" name="oldbalanceOrg" min=1000 max=7500000 step=0.01 id="oldbalanceOrg"  placeholder="balance before the transaction" required="required"/>
+                     </div>
+                 </div>
+                  <div class="form-group row">
+                      <div class="col-md-3">
+                          <label for="newbalanceOrig">NewbalanceOrig</label>
+                          <input type="number" class="form-control" name="newbalanceOrig" min=0 max=500000 step=0.01 id="newbalanceOrig"  placeholder="balance after the transaction" required="required"/>
+                      </div>
+                  </div>
+                   <div class="form-group row">
+                       <div class="col-md-3">
+                           <label for="oldbalanceDest">OldbalanceDest</label>
+                           <input type="number" class="form-control" name="oldbalanceDest" min=0 max=6500000 step=0.01 id="oldbalanceDest"  placeholder="initial balance of recipient before the transaction" required="required"/>
+                       </div>
+                   </div>
+                    <div class="form-group row">
+                        <div class="col-md-3">
+                            <label for="newbalanceDest">NewbalanceDest</label>
+                            <input type="number" class="form-control" name="newbalanceDest" min=0 max=7500000 step=0.01 id="newbalanceDest"  placeholder="the new balance of recipient after the transaction" required="required"/>
+                        </div>
+                    </div>
+                    
+            <button type="submit" class="btn btn-success btn-lg">Submit</button>
+ </form>
+        <br>
+        </h4>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
